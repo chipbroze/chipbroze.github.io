@@ -1,64 +1,137 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Broze - Belpedio Wedding</title>
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Indie+Flower|Rokkitt|Sigmar+One">
+  <!-- Base styles -->
   <link rel="stylesheet" type="text/css" href="public/styles/default.css">
+
+  <title>Belpedio - Broze Wedding</title>
 </head>
 
 <body>
 
 <div id="header">
-  <h1>Tony Belpedio & Chip Broze Wedding</h1>
-  <h4>February 19, 2017 | Saint Louis, MO | Sqwires Restaurant</h4>
-</div>
-
-<div id="nav">
-  <img id="corner" src="public/images/corner.jpg" height="125px" width="125px">
-  <ul>
-    <li><a href="#home">Home</a></li>
-    <li><a href="#schedule">Schedule</a></li>
-    <li><a href="#accomodations">Accomodations</a></li>
-    <li><a href="#ceremony">Ceremony</a></li>
-    <li><a href="#reception">Reception</a></li>
-    <li><a href="#registry">Registry</a></li>
-    <li><a href="#brunch-menu">Brunch Menu</a></li>
-    <li><a href="#dress-code">Dress Code</a></li>
-    <li><a href="#first-date">First Date</a></li>
-  </ul>
+  <h1>Tony Belpedio + Chip Broze</h1>
+  <h4>Sunday, February 19, 2017</h4>
 </div>
 
 <div id="article">
-  <div class="primary-cntnr">
-    <a name="home"></a>
-    <h2>Home</h2>
-    <p>Tony and Chip will be tying the knot on the 19th of February, 2017,
-       at Squires Restaurant and Annex in downtown St. Louis. Be there or
-       be sqware.</p>
+  <div class="primary-cntnr col-md-4">
+    <h2>Location</h2>
+    <div class="drop-down">
+      <img class="content-image" src="public/images/sqwires-annex.png">
+      <p>We'll be tying the knot at the best brunch restaurant in town,
+         <a href="http://www.sqwires.com">Sqwires Restaurant and Annex</a>
+         in Lafayette Square, St. Louis, MO.
+      <p>In addition to serving extra-delicious nummies, Sqwires is known
+         for their extravagant Bloody Mary bar and industrial-inspired
+         and rustic decor.
+      <p>GoogleMaps to the rescue: <a href="yahoo.com">Don't get lost</a>
+    </div>
   </div>
-  <div class="primary-cntnr">
+  <div class="primary-cntnr col-md-4">
     <a name="schedule"></a>
     <h2>Schedule</h2>
-    <p>It will be a busy day filled with cookies and cake.</p>
-    <ul>
-      <li>
-        <h3>10:00 am: Ceremony Circus</h3>
-        <p>Ceremony begins at Sqwires Annex</p>
-      </li>
-      <li>
-        <h3>10:45 am: Cocktail Company</h3>
-        <p>Cocktail Hour</p>
-      </li>
-      <li>
-        <h3>11:30 am: Brunch Break</h3>
-        <p>Yummy yummy brunch time.</p>
-      </li>
-    </ul>
+    <div class="drop-down">
+      <p>It will be a busy day filled with cookies and cake.</p>
+      <ul>
+        <li>
+          <h3>10:00 am: Ceremony Circus</h3>
+          <p>Ceremony begins at Sqwires Annex</p>
+        </li>
+        <li>
+          <h3>10:45 am: Cocktail Company</h3>
+          <p>Cocktail Hour</p>
+        </li>
+        <li>
+          <h3>11:30 am: Brunch Break</h3>
+          <p>Yummy yummy brunch time.</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="primary-cntnr col-md-4">
+    <a name="home"></a>
+    <h2>Ceremony</h2>
+    <div class="drop-down">
+      <p>Tony and Chip will be tying the knot on the 19th of February, 2017,
+         at Squires Restaurant and Annex in downtown St. Louis. Be there or
+         be sqware.</p>
+       <h3>Attire</h3>
+       <p>Wear something sexy.
+    </div>
+  </div>
+  <div class="primary-cntnr col-md-4">
+    <a name="home"></a>
+    <h2>Reception</h2>
+    <div class="drop-down">
+      <p>Tony and Chip will be tying the knot on the 19th of February, 2017,
+         at Squires Restaurant and Annex in downtown St. Louis. Be there or
+         be sqware.</p>
+       <h3>Menu</h3>
+       <p>Eat it, it's good.
+    </div>
+  </div>
+  <div class="primary-cntnr col-md-4">
+    <a name="home"></a>
+    <h2>Registry</h2>
+    <div class="drop-down">
+      <img class="content-image" src="public/images/isle-of-skye.jpg">
+      <p>Tony and Chip will be tying the knot on the 19th of February, 2017,
+         at Squires Restaurant and Annex in downtown St. Louis. Be there or
+         be sqware.</p>
+    </div>
   </div>
 </div>
 
 <div id="footer">
+  <div id="photoscroll"></div>
 </div>
-</body>
 
+<!-- Scripts -->
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.0.min.js"></script>
+<script>
+  $(document).ready(function () {
+    var width = $(window).width();
+    var dist = (width / 2) - 350;
+    var scroll = $('#photoscroll');
+    scroll.append($('<div>').width('200px'));
+    scroll.append($('<div>').width('150px'));
+    scroll.append($('<div>').width('250px'));
+    scroll.append($('<div>').width('100px'));
+    var word = scroll.children(':first');
+
+    function scrollImage (i, word) {
+      var left = i * 50;
+      var src = '"public/images/scroll-' + i + '.jpg"';
+      var img = $('<img src=' + src + ' height="50px" width="50px">')
+        .css('opacity', '0')
+        .css('left', '-' + (dist + left) + 'px');
+      word.append(img);
+      img.animate({
+        opacity: '.50',
+        left: 0,
+      }, 1000).animate({
+        opacity: '1'
+      }, 500);
+    }
+
+    var counter = 0;
+    var interval = setInterval(function () {
+      if ([4, 7, 12].indexOf(counter) !== -1) {
+        word = word.next();
+      }
+      scrollImage(counter++, word);
+      if (counter === 14) clearInterval(interval);
+    }, 250);
+
+    var headings = $('h2');
+    headings.click(function (e) {
+      var heading = $(this);
+      var content = heading.next();
+      content.slideToggle(500);
+    });
+  });
+</script>
+
+</body>
 </html>

@@ -1,27 +1,40 @@
+@import url(https://fonts.googleapis.com/css?family=Architects+Daughter|Roboto+Slab:100|Poller+One);
+
 * {
   margin: 0;
   padding: 0;
 }
 
-body {
-  background: navy;
-  color: white;
-  font-family: 'Rokkitt', serif;
+.hidey {
+  display: none;
 }
 
-h1, h2, h3 {
-  font-family: 'Indie Flower', cursive;
-  margin: auto;
+body {
+  background: #000055;
+  color: #EEEEEE;
+  font-family: 'Roboto Slab', serif;
+  font-size: 16px;
+  min-width: 250px;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Architects Daughter', cursive;
   color: orange;
 }
 
 a {
-  color: #CCCCCC;
+  color: orange;
 }
 
 a:hover {
   color: white;
   text-decoration: none;
+}
+
+p {
+  line-height: 150%;
+  font-weight: 100;
+  text-align: justify;
 }
 
 ul {
@@ -30,30 +43,39 @@ ul {
 
 #header {
   background: #CC5500;
-  box-shadow: 0 5px 50px 3px #000044;
-  padding: 40px 0;
-  position: relative;
+  padding: 20px 0;
   margin-bottom: 30px;
-  z-index: 10;
+  box-shadow: 0 5px 50px 3px #000044;
 }
 h1, h4 {
   text-align: center;
 }
 h1 {
   line-height: 100%;
-  font-family: 'Sigmar One', sans-serif;
-  font-size: 48px;
-  font-weight: normal;
-  z-index: 1;
+  text-transform: uppercase;
+  font-family: 'Poller One', sans-serif;
+  font-size: 3em;
 }
 h4 {
-  font-size: 24px;
+  color: #EEEEEE;
+  font-size: 1.5em;
 }
 
-#nav {
-  position: fixed;
-  top: 20px;
-  left: 20px;
+#photoscroll {
+  height: 50px;
+  margin: 10px auto;
+  max-width: 900px;
+  min-width: 250px;
+
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+#photoscroll img {
+  position: relative;
+}
+#photoscroll div {
+  display: inline-block;
 }
 
 #corner {
@@ -61,23 +83,54 @@ h4 {
   margin-bottom: 25px;
 }
 
-#nav a {
-  border-left: 5px solid navy;
-  font-size: 18px;
-  line-height: 150%;
-  padding-left: 10px;
-  text-decoration: none;
-}
-
-#nav a:hover {
-  border-left: 5px solid white;
-}
-
 #article {
   margin: 0 auto;
-  max-width: 900px;
+  max-width: 1000px;
+}
+
+h2 {
+  font-size: 2em;
+  margin-top: 10px;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+}
+h2:hover {
+  color: white;
+  text-align: center;
+}
+h2::after {
+  content: ' >>>';
+}
+h2::before {
+  content: '<<< ';
+}
+
+h3 {
+  margin-top: 10px;
+}
+
+.drop-down {
+  border-top: 1px solid #6666FF;
+  display: none;
+  text-align: left;
+  padding-top: 10px;
+  position: relative;
+  top: -10px;
+}
+
+.content-image {
+  height: auto;
+  max-width: 100%;
 }
 
 .primary-cntnr {
-  min-height: 1000px;
+  margin: 10px auto;
+  text-align: center;
+  max-width: 420px;
+  padding: 0 10px;
+}
+
+#footer {
+  margin-top: 50px;
 }
