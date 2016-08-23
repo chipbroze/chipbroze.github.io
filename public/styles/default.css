@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Architects+Daughter|Roboto+Slab:100|Poller+One);
+@import url(https://fonts.googleapis.com/css?family=Architects+Daughter|Roboto+Slab:100|Poller+One|Bungee+Inline|Luckiest+Guy);
 
 * {
   margin: 0;
@@ -13,7 +13,7 @@ body {
   background: #000055;
   color: #EEEEEE;
   font-family: 'Roboto Slab', serif;
-  font-size: 16px;
+  font-size: 14px;
   min-width: 250px;
 }
 
@@ -42,23 +42,23 @@ ul {
 }
 
 #header {
-  background: #CC5500;
+  background: #BB6600 url(../images/burlap.jpg) no-repeat;
+  background-size: 100%;
   padding: 20px 0;
-  margin-bottom: 30px;
-  box-shadow: 0 5px 50px 3px #000044;
+  box-shadow: 0px 0px 10px 10px #000044;
 }
 h1, h4 {
   text-align: center;
 }
 h1 {
   line-height: 100%;
-  text-transform: uppercase;
-  font-family: 'Poller One', sans-serif;
-  font-size: 3em;
+  font-family: 'Luckiest Guy', 'Bungee Inline', 'Poller One', sans-serif;
+  font-size: 4.5em;
 }
 h4 {
   color: #EEEEEE;
-  font-size: 1.5em;
+  margin-top: -30px;
+  font-size: 3em;
 }
 
 #photoscroll {
@@ -78,32 +78,42 @@ h4 {
   display: inline-block;
 }
 
-#corner {
-  margin-left: 15px;
-  margin-bottom: 25px;
-}
-
 #article {
-  margin: 0 auto;
-  max-width: 1000px;
+  margin: 0;
 }
 
 h2 {
+  display: block;
   font-size: 2em;
-  margin-top: 10px;
   cursor: pointer;
   position: relative;
+  padding: 10px 0;
+  width: 100%;
   z-index: 2;
-}
-h2:hover {
-  color: white;
   text-align: center;
 }
+h2:hover {
+  background: #000066;
+  color: white;
+}
 h2::after {
+  color: orange;
   content: ' >>>';
 }
 h2::before {
+  color: orange;
   content: '<<< ';
+}
+.open {
+  color: white;
+}
+.open::after {
+  color: orange;
+  content: ' <<<';
+}
+.open::before {
+  color: orange;
+  content: '>>> ';
 }
 
 h3 {
@@ -111,24 +121,60 @@ h3 {
 }
 
 .drop-down {
-  border-top: 1px solid #6666FF;
+  border-width: 1px 0;
+  border-style: solid;
+  border-color: #000033;
   display: none;
   text-align: left;
-  padding-top: 10px;
+  padding: 50px 10px;
   position: relative;
-  top: -10px;
 }
 
-.content-image {
-  height: auto;
-  max-width: 100%;
+.content {
+  background: rgb(50, 50, 50); /* Fallback */
+  background: rgba(0, 0, 0, 0.9);
+  margin: 0 auto;
+  padding: 20px 5%;
+  max-width: 450px;
+}
+
+p + p {
+  margin-top: 15px;
+}
+
+.btn {
+  color: white;
+  background: rgb(40, 40, 40); /* Fallback */
+  background: rgba(200, 80, 0, 0.9);
+  border: 1px solid #CC9966;
+  display: block;
+  margin: 20px auto 0 auto;
+  padding: 10px;
+  max-width: 100px;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 2px 2px 10px 1px #000033;
+}
+.btn:hover {
+  background: rgb(40, 40, 40); /* Fallback */
+  background: rgba(230, 100, 40, 0.9);
+}
+
+.sqwires-bg {
+  background-image: url(../images/sqwires-annex.png);
+  background-size: 100%;
+}
+.skye-bg {
+  background-image: url(../images/isle-of-skye.jpg);
+  background-size: 100%;
+}
+.oranges-bg {
+  background-image: url(../images/oranges.jpg);
+  background-size: 100%;
 }
 
 .primary-cntnr {
-  margin: 10px auto;
   text-align: center;
-  max-width: 420px;
-  padding: 0 10px;
 }
 
 #footer {

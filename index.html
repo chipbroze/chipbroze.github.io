@@ -15,49 +15,54 @@
 </div>
 
 <div id="article">
-  <div class="primary-cntnr col-md-4">
+  <div class="primary-cntnr">
     <h2>Location</h2>
-    <div class="drop-down">
-      <img class="content-image" src="public/images/sqwires-annex.png">
-      <p>We'll be tying the knot at the best brunch restaurant in town,
-         <a href="http://www.sqwires.com">Sqwires Restaurant and Annex</a>
-         in Lafayette Square, St. Louis, MO.
-      <p>In addition to serving extra-delicious nummies, Sqwires is known
-         for their extravagant Bloody Mary bar and industrial-inspired
-         and rustic decor.
-      <p>GoogleMaps to the rescue: <a href="yahoo.com">Don't get lost</a>
+    <div class="drop-down sqwires-bg">
+      <div class="content">
+        <p>We'll be tying the knot at the best brunch restaurant in town,
+           <a href="http://www.sqwires.com">Sqwires Restaurant and Annex</a>
+           in Lafayette Square, St. Louis, MO.
+        <p>In addition to serving extra-delicious nummies, Sqwires is known
+           for their extravagant Bloody Mary bar and industrial-inspired
+           and rustic decor.
+      </div>
+      <a class="btn" href="https://goo.gl/maps/WydDaFUwKJF2">Don't get lost</a>
     </div>
   </div>
-  <div class="primary-cntnr col-md-4">
+  <div class="primary-cntnr">
     <a name="schedule"></a>
     <h2>Schedule</h2>
-    <div class="drop-down">
-      <p>It will be a busy day filled with cookies and cake.</p>
-      <ul>
-        <li>
-          <h3>10:00 am: Ceremony Circus</h3>
-          <p>Ceremony begins at Sqwires Annex</p>
-        </li>
-        <li>
-          <h3>10:45 am: Cocktail Company</h3>
-          <p>Cocktail Hour</p>
-        </li>
-        <li>
-          <h3>11:30 am: Brunch Break</h3>
-          <p>Yummy yummy brunch time.</p>
-        </li>
-      </ul>
+    <div class="drop-down oranges-bg">
+      <div class="content">
+        <p>It will be a busy day filled with cookies and cake.</p>
+        <ul>
+          <li>
+            <h3>10:00 am: Ceremony Circus</h3>
+            <p>Ceremony begins at Sqwires Annex</p>
+          </li>
+          <li>
+            <h3>10:45 am: Cocktail Company</h3>
+            <p>Cocktail Hour</p>
+          </li>
+          <li>
+            <h3>11:30 am: Brunch Break</h3>
+            <p>Yummy yummy brunch time.</p>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
   <div class="primary-cntnr col-md-4">
     <a name="home"></a>
     <h2>Ceremony</h2>
     <div class="drop-down">
-      <p>Tony and Chip will be tying the knot on the 19th of February, 2017,
-         at Squires Restaurant and Annex in downtown St. Louis. Be there or
-         be sqware.</p>
-       <h3>Attire</h3>
-       <p>Wear something sexy.
+      <div class="content">
+        <p>Tony and Chip will be tying the knot on the 19th of February, 2017,
+           at Squires Restaurant and Annex in downtown St. Louis. Be there or
+           be sqware.</p>
+        <h3>Attire</h3>
+        <p>Wear something sexy.
+      </div>
     </div>
   </div>
   <div class="primary-cntnr col-md-4">
@@ -74,8 +79,7 @@
   <div class="primary-cntnr col-md-4">
     <a name="home"></a>
     <h2>Registry</h2>
-    <div class="drop-down">
-      <img class="content-image" src="public/images/isle-of-skye.jpg">
+    <div class="drop-down skye-bg">
       <p>Tony and Chip will be tying the knot on the 19th of February, 2017,
          at Squires Restaurant and Annex in downtown St. Louis. Be there or
          be sqware.</p>
@@ -127,10 +131,26 @@
     var headings = $('h2');
     headings.click(function (e) {
       var heading = $(this);
-      var content = heading.next();
-      content.slideToggle(500);
+      var opening = !heading.hasClass('open');
+      var drop_down = heading.next();
+      var content = drop_down.children();
+      if (opening) {
+        content.css('opacity', 0.1);
+      }
+      heading.toggleClass('open');
+      drop_down.slideToggle(500);
+      animateSibling(content.first(), {
+        opacity: opening ? 1 : 0
+      }, 1000);
     });
   });
+
+  function animateSibling (first, animation, speed) {
+    first.animate(animation, speed, function () {
+      if (first.next()) animateSibling(first.next(), animation, speed);
+      else console.log("NO NEXT");
+    });
+  }
 </script>
 
 </body>
