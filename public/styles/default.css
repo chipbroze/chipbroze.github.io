@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Architects+Daughter|Roboto+Slab:100|Poller+One|Bungee+Inline|Luckiest+Guy);
+@import url(https://fonts.googleapis.com/css?family=Architects+Daughter|Roboto+Slab:100|Poller+One|Bungee+Inline);
 
 * {
   margin: 0;
@@ -7,6 +7,9 @@
 
 .hidey {
   display: none;
+}
+html {
+  overflow-y: scroll;
 }
 
 body {
@@ -30,6 +33,9 @@ a:hover {
   color: white;
   text-decoration: none;
 }
+.egg {
+  text-decoration: none;
+}
 
 p {
   line-height: 150%;
@@ -42,9 +48,12 @@ ul {
 }
 
 #header {
-  background: #BB6600 url(../images/burlap.jpg) no-repeat;
+  border-width: 20px 0;
+  border-style: double;
+  border-color: #000055;
+  background: #BB6600;
   background-size: 100%;
-  padding: 20px 0;
+  padding: 20px 0 10px 0;
   box-shadow: 0px 0px 10px 10px #000044;
 }
 h1, h4 {
@@ -52,12 +61,13 @@ h1, h4 {
 }
 h1 {
   line-height: 100%;
-  font-family: 'Luckiest Guy', 'Bungee Inline', 'Poller One', sans-serif;
+  font-family: 'Bungee Inline', 'Poller One', sans-serif;
   font-size: 4.5em;
+  margin-bottom: -15px;
 }
 h4 {
   color: #EEEEEE;
-  margin-top: -30px;
+  margin-top: -15px;
   font-size: 3em;
 }
 
@@ -83,26 +93,34 @@ h4 {
 }
 
 h2 {
+  background: rgba(0, 0, 150, 0.8);
   display: block;
+  font-family: 'Bungee Inline', 'Poller One', sans-serif;
   font-size: 2em;
   cursor: pointer;
   position: relative;
-  padding: 10px 0;
+  padding: 20px 0;
   width: 100%;
   z-index: 2;
   text-align: center;
+  letter-spacing: 3px;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
 }
 h2:hover {
-  background: #000066;
+  background: rgba(0, 0, 120, 0.9);
   color: white;
 }
 h2::after {
   color: orange;
-  content: ' >>>';
+  /*content: ' >>>';*/
 }
 h2::before {
   color: orange;
-  content: '<<< ';
+  /*content: '<<< ';*/
 }
 .open {
   color: white;
@@ -126,13 +144,14 @@ h3 {
   border-color: #000033;
   display: none;
   text-align: left;
-  padding: 50px 10px;
+  padding: 50px 10px 100px 10px;
   position: relative;
 }
 
 .content {
-  background: rgb(50, 50, 50); /* Fallback */
-  background: rgba(0, 0, 0, 0.9);
+  background: rgb(0, 50, 50); /* Fallback */
+  background: rgba(10, 10, 10, 0.8);
+  letter-spacing: 1px;
   margin: 0 auto;
   padding: 20px 5%;
   max-width: 450px;
@@ -160,19 +179,33 @@ p + p {
   background: rgba(230, 100, 40, 0.9);
 }
 
-.sqwires-bg {
-  background-image: url(../images/sqwires-annex.png);
+.bg-img {
   background-size: 100%;
+  background-repeat: repeat;
+  width: 100%;
+  z-index: 4;
 }
-.skye-bg {
-  background-image: url(../images/isle-of-skye.jpg);
-  background-size: 100%;
+.sqwires {
+  background-image: url(../images/sqwires.jpg);
 }
-.oranges-bg {
+.scotland {
+  background-image: url(../images/scotland.jpg);
+}
+.oranges {
   background-image: url(../images/oranges.jpg);
-  background-size: 100%;
 }
-
+.ceremony {
+  background-image: url(../images/ceremony.jpg);
+}
+.brunch {
+  background-image: url(../images/yummy.jpg);
+}
+.taj-mahal {
+  background-image: url(../images/taj-mahal.jpg);
+}
+.penguins {
+  background-image: url(../images/penguins.jpg);
+}
 .primary-cntnr {
   text-align: center;
 }
