@@ -1,0 +1,309 @@
+@import url(https://fonts.googleapis.com/css?family=Architects+Daughter|Roboto+Slab:100|Poller+One|Bungee+Inline);
+
+$navy: #000055;
+$orange: #FF9900;
+$burnt: #CC5500;
+$burnt-light: #DD6611;
+$whitish: #EEEEEE;
+$cursive: 'Architects Daughter', cursive;
+$blocky: 'Bungee Inline', sans-serif;
+$general: 'Roboto Slab', serif;
+
+%no-select {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+}
+
+@media (min-width: 800px) {
+  #header, #footer { font-size: 3rem; }
+  h2 { font-size: 2em; }
+  .drop-down { padding: 3.5em .7em }
+}
+@media (max-width: 800px) {
+  #header, #footer { font-size: 2.7rem; }
+  h2 { font-size: 1.5em; }
+  .drop-down { padding: 2em .7em }
+}
+@media (max-width: 500px) {
+  #header, #footer { font-size: 2rem; }
+  h2 { font-size: 1.3em; }
+  p { text-align: left; }
+  .drop-down { padding: 1em .7em }
+  .drop-down > * { margin: 0 auto 1em auto }
+}
+
+/* Misc and General */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  overflow-y: scroll;
+  font-size: 1em;
+  font-family: $general;
+  color: $whitish;
+}
+body {
+  background: $navy;
+  min-width: 320px;
+}
+a {
+  color: $orange;
+  text-decoration: none;
+}
+a:hover {
+  color: $whitish;
+}
+
+/* Header */
+
+#header {
+  font-family: $cursive;
+  text-align: center;
+  background: $burnt;
+  background-size: 100%;
+  border-color: $navy;
+  border-style: double;
+  border-width: .5em 0;
+  padding: .7em .3em;
+}
+h1 {
+  font-size: 1.5em;
+  font-family: $blocky;
+  line-height: 100%;
+  color: $orange;
+}
+h4 {
+  color: $whitish;
+}
+
+/* Footer */
+
+#footer {
+  color: $whitish;
+  padding: .8em .3em .5em .3em;
+}
+.foot-cntnr {
+  max-width: 550px;
+  margin: 0 auto;
+}
+h5 {
+  font-size: 1.5em;
+  font-family: $blocky;
+  margin-bottom: .3em;
+  text-align: center;
+}
+.foot {
+  font-size: .35em;
+  margin-bottom: 1em;
+  text-align: center;
+}
+#photoscroll {
+  height: 50px;
+  margin: 80px auto 10px auto;
+  max-width: 900px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+#photoscroll img {
+  position: relative;
+}
+#photoscroll div {
+  display: inline-block;
+}
+
+/* Primary Containers */
+
+.primary-cntnr {
+  text-align: center;
+  background-repeat: repeat;
+  background-size: 110%;
+  width: 100%;
+}
+
+h2 {
+  @extend %no-select;
+  background: rgba(0, 0, 85, 0.8);
+  font-family: $blocky;
+  color: $orange;
+  display: block;
+  cursor: pointer;
+  position: relative;
+  padding: .7em 0;
+  text-align: center;
+  letter-spacing: .1em;
+}
+
+h2:hover::after {
+  content: ' <';
+  color: $whitish;
+}
+h2:hover::before {
+  content: '> ';
+  color: $whitish;
+}
+.open {
+  color: $whitish;
+}
+.open::after {
+  color: $orange;
+  content: ' <';
+}
+.open::before {
+  color: $orange;
+  content: '> ';
+}
+.no-click {
+  cursor: default;
+}
+
+p {
+  line-height: 150%;
+  font-weight: 100;
+  margin-bottom: 1em;
+  text-align: justify;
+}
+
+ul {
+  list-style-position: inside;
+}
+
+li {
+  font-size: .9em;
+  margin-bottom: .3em;
+  padding-left: 1.1em;
+  text-indent: -1.1em;
+}
+
+h3 {
+  margin-top: .7em;
+  font-size: 1.5em;
+  font-family: $cursive;
+  color: $orange;
+}
+
+.drop-down {
+  border-bottom: 1px solid #000033;
+  display: none;
+  text-align: left;
+  position: relative;
+}
+
+.drop-down > * {
+  margin: 0 auto 3.5em auto;
+}
+
+.content {
+  background: rgb(0, 50, 50); /* Fallback */
+  background: rgba(10, 10, 10, 0.8);
+  letter-spacing: 1px;
+  padding: 1.2em 5%;
+  max-width: 450px;
+}
+
+.content-img {
+  border: 1px solid $orange;
+  display: block;
+  width: 90%;
+  max-width: 450px;
+}
+
+.aside {
+  color: #AAAAAA;
+  display: block;
+  text-align: right;
+}
+
+.quote {
+  color: $orange;
+  font-size: 1.2em;
+  display: block;
+  text-align: center;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  margin-top: 1.5em;
+}
+
+.remembers {
+  color: #AAAAAA;
+  display: block;
+  text-transform: uppercase;
+  font-size: .8em;
+}
+.remembers::after {
+  content: " Remembers";
+}
+
+.btn {
+  color: $whitish;
+  background: $burnt;
+  border: 1px solid $orange;
+  display: block;
+  padding: 10px;
+  max-width: 120px;
+  letter-spacing: 1px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 2px 2px 10px 1px #000033;
+}
+.btn:hover {
+  background: $burnt-light;
+}
+.btn:active {
+  top: 1px;
+  left: 1px;
+}
+.thankful {
+  display: block;
+  position: relative;
+  border: 1px solid $orange;
+  width: 80%;
+  max-width: 390px;
+  text-align: center;
+  box-shadow: 2px 2px 10px 1px #000033;
+  box-sizing: border-box;
+}
+.thankful:hover {
+  border-color: $whitish;
+}
+.thankful:active {
+  top: 1px;
+  left: 1px;
+}
+.thankful-img {
+  width: 100%;
+  box-sizing: border-box;
+}
+.schedule-bg {
+  background-image: url(../images/oranges.jpg);
+}
+.location-bg {
+  background-image: url(../images/sqwires.jpg);
+}
+.attire-bg {
+  background-image: url(../images/closet.jpg);
+}
+.brunch-bg {
+  background-image: url(../images/yummy.jpg);
+}
+.accomodations-bg {
+  background-image: url(../images/taj-mahal.jpg);
+}
+.registry-bg {
+  background-image: url(../images/scotland.jpg);
+}
+.rsvp-bg {
+  background-image: url(../images/rsvp.jpg);
+}
+.first-date-bg {
+  background-image: url(../images/forest-park.jpg);
+}
+.fun-in-the-lou-bg {
+  background-image: url(../images/penguins.jpg);
+}
