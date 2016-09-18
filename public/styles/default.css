@@ -286,6 +286,9 @@ h3 {
   p {
     text-align: left; }
 
+  .foot {
+    font-size: .5em; }
+
   .drop-down {
     padding: 1em 0.7em; }
 
