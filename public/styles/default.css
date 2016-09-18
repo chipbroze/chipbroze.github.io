@@ -6,39 +6,6 @@ h2 {
   -ms-user-select: none;
   -o-user-select: none; }
 
-@media (min-width: 800px) {
-  #header, #footer {
-    font-size: 3rem; }
-
-  h2 {
-    font-size: 2em; }
-
-  .drop-down {
-    padding: 3.5em 0.7em; } }
-@media (max-width: 800px) {
-  #header, #footer {
-    font-size: 2.7rem; }
-
-  h2 {
-    font-size: 1.5em; }
-
-  .drop-down {
-    padding: 2em 0.7em; } }
-@media (max-width: 500px) {
-  #header, #footer {
-    font-size: 2rem; }
-
-  h2 {
-    font-size: 1.3em; }
-
-  p {
-    text-align: left; }
-
-  .drop-down {
-    padding: 1em 0.7em; }
-
-  .drop-down > * {
-    margin: 0 auto 1em auto; } }
 /* Misc and General */
 * {
   margin: 0;
@@ -289,5 +256,40 @@ h3 {
 
 .fun-in-the-lou-bg {
   background-image: url(../images/penguins.jpg); }
+
+/* Media query overrides */
+@media (min-width: 800px) {
+  #header, #footer {
+    font-size: 3rem; }
+
+  h2 {
+    font-size: 2em; }
+
+  .drop-down {
+    padding: 3.5em 0.7em; } }
+@media (max-width: 800px) {
+  #header, #footer {
+    font-size: 2.7rem; }
+
+  h2 {
+    font-size: 1.5em; }
+
+  .drop-down {
+    padding: 2em 0.7em; } }
+@media (max-width: 500px) {
+  #header, #footer {
+    font-size: 2rem; }
+
+  h2 {
+    font-size: 1.3em; }
+
+  p {
+    text-align: left; }
+
+  .drop-down {
+    padding: 1em 0.7em; }
+
+  .drop-down > * {
+    margin: 0 auto 1em auto; } }
 
 /*# sourceMappingURL=default.css.map */
