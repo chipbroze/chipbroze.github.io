@@ -267,7 +267,7 @@ h3 {
 
   .drop-down {
     padding: 3.5em 0.7em; } }
-@media (max-device-width: 800px) {
+@media (max-width: 800px) {
   #header, #footer {
     font-size: 2.7rem; }
 
@@ -276,7 +276,7 @@ h3 {
 
   .drop-down {
     padding: 2em 0.7em; } }
-@media (max-device-width: 500px) {
+@media (max-width: 500px) {
   #header, #footer {
     font-size: 2rem; }
 
