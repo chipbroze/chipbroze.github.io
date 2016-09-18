@@ -41,6 +41,10 @@ a:hover {
   color: $whitish;
 }
 
+img {
+  vertical-align: middle;
+}
+
 /* Header */
 
 #header {
@@ -249,7 +253,6 @@ h3 {
   max-width: 390px;
   text-align: center;
   box-shadow: 2px 2px 10px 1px #000033;
-  box-sizing: border-box;
 }
 .thankful:hover {
   border-color: $whitish;
@@ -260,7 +263,6 @@ h3 {
 }
 .thankful-img {
   width: 100%;
-  box-sizing: border-box;
 }
 .schedule-bg {
   background-image: url(../images/oranges.jpg);
