@@ -138,7 +138,7 @@ function openSection () {
   if (this.id != curr_page) {
     curr_page = this.id;
     setTimeout(function () {
-      window.location.href = window.location.href.replace(/(#.*)?$/, '#' + _this.id);
+      window.location.replace(window.location.href.replace(/(#.*)?$/, '#' + _this.id));
     }, 600);
   }
   disableClick(true);
