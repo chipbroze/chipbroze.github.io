@@ -25,7 +25,7 @@ $(document).ready(function () {
   });
 
   //$window.resize(sizeAllBackgrounds);
-  //sizeAllBackgrounds();
+  sizeAllBackgrounds();
 
   $('h2').click(openSection);
 
