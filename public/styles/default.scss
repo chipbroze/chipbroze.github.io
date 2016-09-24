@@ -79,6 +79,7 @@ h4 {
 }
 h5 {
   font-size: 1.5em;
+  line-height: 100%;
   font-family: $blocky;
   margin-bottom: .3em;
   text-align: center;
@@ -116,6 +117,7 @@ h2 {
   @extend %no-select;
   background: rgba(0, 0, 85, 0.8);
   font-family: $blocky;
+  line-height: 100%;
   color: $orange;
   display: block;
   cursor: pointer;
